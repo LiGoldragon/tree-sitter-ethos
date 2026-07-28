@@ -1,5 +1,5 @@
 /**
- * @file Tree-sitter grammar for authored SEMA schema files.
+ * @file Tree-sitter grammar for authored Ethos files.
  * @license MIT
  */
 /// <reference types="tree-sitter-cli/dsl" />
@@ -9,7 +9,7 @@ const nameCharacters = /[A-Za-z_][A-Za-z0-9_:\-]*/;
 const atomCharacters = /[^()\[\]{}\s]+/;
 
 module.exports = grammar({
-  name: "schema",
+  name: "ethos",
 
   conflicts: $ => [
     [$.import_entry, $.raw_object],
@@ -24,12 +24,12 @@ module.exports = grammar({
 
   rules: {
     source_file: $ => choice(
-      $._authored_schema,
+      $._authored_ethos,
       $.macro_library,
-      $.raw_core_schema,
+      $.raw_core_ethos,
     ),
 
-    _authored_schema: $ => seq(
+    _authored_ethos: $ => seq(
       optional(field("imports", $.imports)),
       field("input", $.root_enum),
       field("output", $.root_enum),
@@ -152,19 +152,21 @@ module.exports = grammar({
     relation_value: $ => choice($.relation_path, $.name),
     relation_path: $ => seq("(", repeat1($.name), ")"),
 
-    macro_library: $ => repeat1($.schema_macro),
-    schema_macro: $ => seq(
+    macro_library: $ => repeat1($.ethos_macro),
+    ethos_macro: $ => seq(
       "(",
-      field("head", $.schema_macro_keyword),
+      field("head", $.ethos_macro_keyword),
       field("name", $.name),
       field("position", $.name),
       field("pattern", $.raw_object),
       field("template", $.raw_object),
       ")",
     ),
-    schema_macro_keyword: $ => "SchemaMacro",
+    // `SchemaMacro` names the schema-generation construct, not the language.
+    // Retaining its authored spelling keeps this terminology change behavior-free.
+    ethos_macro_keyword: $ => "SchemaMacro",
 
-    raw_core_schema: $ => $.raw_map,
+    raw_core_ethos: $ => $.raw_map,
     raw_object: $ => choice(
       $.raw_parenthesized,
       $.raw_vector,

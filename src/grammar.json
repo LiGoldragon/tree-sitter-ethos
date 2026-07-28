@@ -1,6 +1,6 @@
 {
   "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
-  "name": "schema",
+  "name": "ethos",
   "word": "name",
   "rules": {
     "source_file": {
@@ -8,7 +8,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_authored_schema"
+          "name": "_authored_ethos"
         },
         {
           "type": "SYMBOL",
@@ -16,11 +16,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "raw_core_schema"
+          "name": "raw_core_ethos"
         }
       ]
     },
-    "_authored_schema": {
+    "_authored_ethos": {
       "type": "SEQ",
       "members": [
         {
@@ -813,10 +813,10 @@
       "type": "REPEAT1",
       "content": {
         "type": "SYMBOL",
-        "name": "schema_macro"
+        "name": "ethos_macro"
       }
     },
-    "schema_macro": {
+    "ethos_macro": {
       "type": "SEQ",
       "members": [
         {
@@ -828,7 +828,7 @@
           "name": "head",
           "content": {
             "type": "SYMBOL",
-            "name": "schema_macro_keyword"
+            "name": "ethos_macro_keyword"
           }
         },
         {
@@ -869,11 +869,11 @@
         }
       ]
     },
-    "schema_macro_keyword": {
+    "ethos_macro_keyword": {
       "type": "STRING",
       "value": "SchemaMacro"
     },
-    "raw_core_schema": {
+    "raw_core_ethos": {
       "type": "SYMBOL",
       "name": "raw_map"
     },

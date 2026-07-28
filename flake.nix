@@ -1,5 +1,5 @@
 {
-  description = "tree-sitter-schema — SEMA schema grammar, WASM parser, and editor checks";
+  description = "tree-sitter-ethos — Ethos grammar, WASM parser, and editor checks";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -20,7 +20,7 @@
       packages = forSystems ({ pkgs, ... }:
         let
           wasiCompiler = pkgs.pkgsCross.wasi32.stdenv.cc;
-          wasiSdk = pkgs.runCommand "tree-sitter-schema-wasi-sdk" {
+          wasiSdk = pkgs.runCommand "tree-sitter-ethos-wasi-sdk" {
             nativeBuildInputs = [ pkgs.makeWrapper ];
           } ''
             mkdir -p "$out/bin"
@@ -32,8 +32,8 @@
         in
         {
           default = pkgs.stdenv.mkDerivation {
-            pname = "tree-sitter-schema";
-            version = "0.1.0";
+            pname = "tree-sitter-ethos";
+            version = "0.2.0";
             src = ./.;
 
             nativeBuildInputs = [
@@ -52,18 +52,18 @@
               export TREE_SITTER_WASI_SDK_PATH="${wasiSdk}"
               tree-sitter generate
               tree-sitter test
-              find test/fixtures -name '*.schema' -print0 \
+              find test/fixtures -name '*.ethos' -print0 \
                 | xargs -0 -n1 tree-sitter parse --quiet \
-                > "$TMPDIR/schema-fixture-parse.log" 2>&1
-              if grep -E 'ERROR|MISSING' "$TMPDIR/schema-fixture-parse.log"; then
-                cat "$TMPDIR/schema-fixture-parse.log"
+                > "$TMPDIR/ethos-fixture-parse.log" 2>&1
+              if grep -E 'ERROR|MISSING' "$TMPDIR/ethos-fixture-parse.log"; then
+                cat "$TMPDIR/ethos-fixture-parse.log"
                 exit 1
               fi
               emacs --batch -Q -L editors/emacs \
-                -f batch-byte-compile editors/emacs/schema-ts-mode.el
+                -f batch-byte-compile editors/emacs/ethos-ts-mode.el
               rm -f editors/emacs/*.elc
-              tree-sitter build --wasm -o tree-sitter-schema.wasm
-              file tree-sitter-schema.wasm | grep WebAssembly
+              tree-sitter build --wasm -o tree-sitter-ethos.wasm
+              file tree-sitter-ethos.wasm | grep WebAssembly
               runHook postBuild
             '';
 
@@ -71,7 +71,7 @@
               runHook preInstall
               mkdir -p "$out"
               cp -R grammar.js package.json README.md LICENSE tree-sitter.json \
-                src queries editors test tree-sitter-schema.wasm "$out/"
+                src queries editors test tree-sitter-ethos.wasm "$out/"
               runHook postInstall
             '';
           };

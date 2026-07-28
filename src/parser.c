@@ -42,7 +42,7 @@ enum ts_symbol_identifiers {
   sym_family_key = 20,
   sym_table_name = 21,
   sym_relation_keyword = 22,
-  sym_schema_macro_keyword = 23,
+  sym_ethos_macro_keyword = 23,
   anon_sym_Vec = 24,
   anon_sym_Vector = 25,
   anon_sym_Optional = 26,
@@ -57,7 +57,7 @@ enum ts_symbol_identifiers {
   sym_atom = 35,
   sym_comment = 36,
   sym_source_file = 37,
-  sym__authored_schema = 38,
+  sym__authored_ethos = 38,
   sym_imports = 39,
   sym_import_entry = 40,
   sym_root_enum = 41,
@@ -89,8 +89,8 @@ enum ts_symbol_identifiers {
   sym_relation_value = 67,
   sym_relation_path = 68,
   sym_macro_library = 69,
-  sym_schema_macro = 70,
-  sym_raw_core_schema = 71,
+  sym_ethos_macro = 70,
+  sym_raw_core_ethos = 71,
   sym_raw_object = 72,
   sym_raw_parenthesized = 73,
   sym_raw_vector = 74,
@@ -145,7 +145,7 @@ static const char * const ts_symbol_names[] = {
   [sym_family_key] = "family_key",
   [sym_table_name] = "table_name",
   [sym_relation_keyword] = "relation_keyword",
-  [sym_schema_macro_keyword] = "schema_macro_keyword",
+  [sym_ethos_macro_keyword] = "ethos_macro_keyword",
   [anon_sym_Vec] = "Vec",
   [anon_sym_Vector] = "Vector",
   [anon_sym_Optional] = "Optional",
@@ -160,7 +160,7 @@ static const char * const ts_symbol_names[] = {
   [sym_atom] = "atom",
   [sym_comment] = "comment",
   [sym_source_file] = "source_file",
-  [sym__authored_schema] = "_authored_schema",
+  [sym__authored_ethos] = "_authored_ethos",
   [sym_imports] = "imports",
   [sym_import_entry] = "import_entry",
   [sym_root_enum] = "root_enum",
@@ -192,8 +192,8 @@ static const char * const ts_symbol_names[] = {
   [sym_relation_value] = "relation_value",
   [sym_relation_path] = "relation_path",
   [sym_macro_library] = "macro_library",
-  [sym_schema_macro] = "schema_macro",
-  [sym_raw_core_schema] = "raw_core_schema",
+  [sym_ethos_macro] = "ethos_macro",
+  [sym_raw_core_ethos] = "raw_core_ethos",
   [sym_raw_object] = "raw_object",
   [sym_raw_parenthesized] = "raw_parenthesized",
   [sym_raw_vector] = "raw_vector",
@@ -248,7 +248,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_family_key] = sym_family_key,
   [sym_table_name] = sym_table_name,
   [sym_relation_keyword] = sym_relation_keyword,
-  [sym_schema_macro_keyword] = sym_schema_macro_keyword,
+  [sym_ethos_macro_keyword] = sym_ethos_macro_keyword,
   [anon_sym_Vec] = anon_sym_Vec,
   [anon_sym_Vector] = anon_sym_Vector,
   [anon_sym_Optional] = anon_sym_Optional,
@@ -263,7 +263,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_atom] = sym_atom,
   [sym_comment] = sym_comment,
   [sym_source_file] = sym_source_file,
-  [sym__authored_schema] = sym__authored_schema,
+  [sym__authored_ethos] = sym__authored_ethos,
   [sym_imports] = sym_imports,
   [sym_import_entry] = sym_import_entry,
   [sym_root_enum] = sym_root_enum,
@@ -295,8 +295,8 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_relation_value] = sym_relation_value,
   [sym_relation_path] = sym_relation_path,
   [sym_macro_library] = sym_macro_library,
-  [sym_schema_macro] = sym_schema_macro,
-  [sym_raw_core_schema] = sym_raw_core_schema,
+  [sym_ethos_macro] = sym_ethos_macro,
+  [sym_raw_core_ethos] = sym_raw_core_ethos,
   [sym_raw_object] = sym_raw_object,
   [sym_raw_parenthesized] = sym_raw_parenthesized,
   [sym_raw_vector] = sym_raw_vector,
@@ -420,7 +420,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym_schema_macro_keyword] = {
+  [sym_ethos_macro_keyword] = {
     .visible = true,
     .named = true,
   },
@@ -480,7 +480,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym__authored_schema] = {
+  [sym__authored_ethos] = {
     .visible = false,
     .named = true,
   },
@@ -608,11 +608,11 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym_schema_macro] = {
+  [sym_ethos_macro] = {
     .visible = true,
     .named = true,
   },
-  [sym_raw_core_schema] = {
+  [sym_raw_core_ethos] = {
     .visible = true,
     .named = true,
   },
@@ -1536,7 +1536,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(sym_relation_keyword);
       END_STATE();
     case 117:
-      ACCEPT_TOKEN(sym_schema_macro_keyword);
+      ACCEPT_TOKEN(sym_ethos_macro_keyword);
       END_STATE();
     case 118:
       ACCEPT_TOKEN(anon_sym_Vec);
@@ -2709,7 +2709,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_family_key] = ACTIONS(1),
     [sym_table_name] = ACTIONS(1),
     [sym_relation_keyword] = ACTIONS(1),
-    [sym_schema_macro_keyword] = ACTIONS(1),
+    [sym_ethos_macro_keyword] = ACTIONS(1),
     [anon_sym_Vec] = ACTIONS(1),
     [anon_sym_Vector] = ACTIONS(1),
     [anon_sym_Optional] = ACTIONS(1),
@@ -2725,12 +2725,12 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   },
   [STATE(1)] = {
     [sym_source_file] = STATE(185),
-    [sym__authored_schema] = STATE(159),
+    [sym__authored_ethos] = STATE(159),
     [sym_imports] = STATE(125),
     [sym_root_enum] = STATE(115),
     [sym_macro_library] = STATE(160),
-    [sym_schema_macro] = STATE(89),
-    [sym_raw_core_schema] = STATE(160),
+    [sym_ethos_macro] = STATE(89),
+    [sym_raw_core_ethos] = STATE(160),
     [sym_raw_map] = STATE(143),
     [aux_sym_macro_library_repeat1] = STATE(89),
     [anon_sym_LBRACE] = ACTIONS(5),
@@ -4050,7 +4050,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(243), 1,
       anon_sym_LPAREN,
     STATE(72), 2,
-      sym_schema_macro,
+      sym_ethos_macro,
       aux_sym_macro_library_repeat1,
   [1716] = 4,
     ACTIONS(3), 1,
@@ -4205,7 +4205,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(285), 1,
       ts_builtin_sym_end,
     STATE(72), 2,
-      sym_schema_macro,
+      sym_ethos_macro,
       aux_sym_macro_library_repeat1,
   [1924] = 4,
     ACTIONS(3), 1,
@@ -4761,7 +4761,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(3), 1,
       sym_comment,
     ACTIONS(452), 1,
-      sym_schema_macro_keyword,
+      sym_ethos_macro_keyword,
   [2685] = 2,
     ACTIONS(3), 1,
       sym_comment,
@@ -5143,14 +5143,14 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [320] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_struct_declaration, 3, 0, 0),
   [322] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_field_declaration, 2, 0, 10),
   [324] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_unit_variant, 1, 0, 2),
-  [326] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__authored_schema, 4, 0, 6),
+  [326] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__authored_ethos, 4, 0, 6),
   [328] = {.entry = {.count = 1, .reusable = true}}, SHIFT(73),
-  [330] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__authored_schema, 3, 0, 4),
+  [330] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__authored_ethos, 3, 0, 4),
   [332] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_scope_keyword, 1, 0, 0),
   [334] = {.entry = {.count = 1, .reusable = true}}, SHIFT(70),
   [336] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_namespace_entry, 2, 0, 10),
   [338] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_namespace, 3, 0, 0),
-  [340] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_schema_macro, 7, 0, 15),
+  [340] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_ethos_macro, 7, 0, 15),
   [342] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_root_enum, 3, 0, 0),
   [344] = {.entry = {.count = 1, .reusable = true}}, SHIFT(53),
   [346] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_raw_map, 2, 0, 0),
@@ -5170,8 +5170,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [374] = {.entry = {.count = 1, .reusable = true}}, SHIFT(67),
   [376] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_relation, 4, 0, 18),
   [378] = {.entry = {.count = 1, .reusable = true}}, SHIFT(36),
-  [380] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_raw_core_schema, 1, 0, 0),
-  [382] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__authored_schema, 5, 0, 9),
+  [380] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_raw_core_ethos, 1, 0, 0),
+  [382] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__authored_ethos, 5, 0, 9),
   [384] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_relation_values, 3, 0, 0),
   [386] = {.entry = {.count = 1, .reusable = true}}, SHIFT(129),
   [388] = {.entry = {.count = 1, .reusable = true}}, SHIFT(30),
@@ -5210,7 +5210,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [454] = {.entry = {.count = 1, .reusable = true}}, SHIFT(174),
   [456] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_stream_body, 3, 0, 0),
   [458] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_imports, 3, 0, 0),
-  [460] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__authored_schema, 4, 0, 7),
+  [460] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__authored_ethos, 4, 0, 7),
   [462] = {.entry = {.count = 1, .reusable = true}},  ACCEPT_INPUT(),
   [464] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_family_body, 3, 0, 0),
   [466] = {.entry = {.count = 1, .reusable = true}}, SHIFT(104),
@@ -5227,7 +5227,7 @@ extern "C" {
 #define TS_PUBLIC __attribute__((visibility("default")))
 #endif
 
-TS_PUBLIC const TSLanguage *tree_sitter_schema(void) {
+TS_PUBLIC const TSLanguage *tree_sitter_ethos(void) {
   static const TSLanguage language = {
     .abi_version = LANGUAGE_VERSION,
     .symbol_count = SYMBOL_COUNT,
@@ -5257,11 +5257,11 @@ TS_PUBLIC const TSLanguage *tree_sitter_schema(void) {
     .keyword_lex_fn = ts_lex_keywords,
     .keyword_capture_token = sym_name,
     .primary_state_ids = ts_primary_state_ids,
-    .name = "schema",
+    .name = "ethos",
     .max_reserved_word_set_size = 0,
     .metadata = {
       .major_version = 0,
-      .minor_version = 1,
+      .minor_version = 2,
       .patch_version = 0,
     },
   };

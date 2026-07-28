@@ -1,8 +1,8 @@
 {
-  "name": "sema-schema-language-vscodium",
-  "displayName": "SEMA Schema Language",
-  "description": "Language registration and theme defaults for tree-sitter SEMA schema highlighting in VSCodium.",
-  "version": "0.1.0",
+  "name": "ethos-language-vscodium",
+  "displayName": "Ethos Language",
+  "description": "Language registration and theme defaults for tree-sitter Ethos highlighting in VSCodium.",
+  "version": "0.2.0",
   "publisher": "LiGoldragon",
   "engines": {
     "vscode": "^1.90.0"
@@ -12,42 +12,42 @@
   "contributes": {
     "languages": [
       {
-        "id": "schema",
-        "aliases": ["SEMA Schema", "schema"],
-        "extensions": [".schema"],
+        "id": "ethos",
+        "aliases": ["Ethos", "ethos"],
+        "extensions": [".ethos"],
         "configuration": "./language-configuration.json"
       }
     ],
     "configurationDefaults": {
-      "[schema]": {
+      "[ethos]": {
         "editor.semanticHighlighting.enabled": true
       },
       "editor.semanticTokenColorCustomizations": {
         "enabled": true,
         "rules": {
-          "*.schema:type": {
+          "*.ethos:type": {
             "foreground": "#4EC9B0",
             "fontStyle": "bold"
           },
-          "*.schema:enum": {
+          "*.ethos:enum": {
             "foreground": "#C586C0",
             "fontStyle": "bold"
           },
-          "*.schema:namespace": {
+          "*.ethos:namespace": {
             "foreground": "#9CDCFE",
             "fontStyle": "bold"
           },
-          "*.schema:property": "#D7BA7D",
-          "*.schema:parameter": "#B5CEA8",
-          "*.schema:macro": {
+          "*.ethos:property": "#D7BA7D",
+          "*.ethos:parameter": "#B5CEA8",
+          "*.ethos:macro": {
             "foreground": "#DCDCAA",
             "fontStyle": "bold"
           },
-          "*.schema:keyword": "#C586C0",
-          "*.schema:string": "#CE9178",
-          "*.schema:number": "#B5CEA8",
-          "*.schema:comment": "#6A9955",
-          "*.schema:operator": "#D4D4D4"
+          "*.ethos:keyword": "#C586C0",
+          "*.ethos:string": "#CE9178",
+          "*.ethos:number": "#B5CEA8",
+          "*.ethos:comment": "#6A9955",
+          "*.ethos:operator": "#D4D4D4"
         }
       }
     }

@@ -1,27 +1,27 @@
 {
   "grammars": [
     {
-      "name": "schema",
-      "camelcase": "Schema",
-      "scope": "source.schema",
+      "name": "ethos",
+      "camelcase": "Ethos",
+      "scope": "source.ethos",
       "path": ".",
-      "file-types": ["schema"],
+      "file-types": ["ethos"],
       "highlights": ["queries/highlights.scm"],
       "locals": ["queries/locals.scm"],
-      "injection-regex": "schema"
+      "injection-regex": "ethos"
     }
   ],
   "metadata": {
-    "version": "0.1.0",
+    "version": "0.2.0",
     "license": "MIT",
-    "description": "Tree-sitter grammar and editor highlighting support for authored SEMA schema files",
+    "description": "Tree-sitter grammar and editor highlighting support for authored Ethos files",
     "authors": [
       {
         "name": "LiGoldragon"
       }
     ],
     "links": {
-      "repository": "https://github.com/LiGoldragon/tree-sitter-schema"
+      "repository": "https://github.com/LiGoldragon/tree-sitter-ethos"
     }
   },
   "bindings": {

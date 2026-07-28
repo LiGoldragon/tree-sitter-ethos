@@ -1,8 +1,8 @@
 {
   "tree-sitter-vscode.languageConfigs": [
     {
-      "lang": "schema",
-      "parser": "${workspaceFolder}/tree-sitter-schema.wasm",
+      "lang": "ethos",
+      "parser": "${workspaceFolder}/tree-sitter-ethos.wasm",
       "highlights": "${workspaceFolder}/queries/highlights.scm",
       "folds": "${workspaceFolder}/queries/folds.scm",
       "semanticTokenTypeMappings": {

@@ -76,9 +76,9 @@
 (relation_keyword) @function.macro
 (relation_path (name) @type)
 
-; Macro-library schema source
-(schema_macro_keyword) @function.macro
-(schema_macro
+; Macro-library Ethos source
+(ethos_macro_keyword) @function.macro
+(ethos_macro
   name: (name) @function.macro
   position: (name) @keyword)
 (raw_parenthesized) @punctuation.special

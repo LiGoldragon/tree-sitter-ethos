@@ -102,6 +102,62 @@
     }
   },
   {
+    "type": "ethos_macro",
+    "named": true,
+    "fields": {
+      "head": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ethos_macro_keyword",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "raw_object",
+            "named": true
+          }
+        ]
+      },
+      "position": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "template": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "raw_object",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "family_body",
     "named": true,
     "fields": {},
@@ -333,7 +389,7 @@
       "required": true,
       "types": [
         {
-          "type": "schema_macro",
+          "type": "ethos_macro",
           "named": true
         }
       ]
@@ -585,7 +641,7 @@
     }
   },
   {
-    "type": "raw_core_schema",
+    "type": "raw_core_ethos",
     "named": true,
     "fields": {},
     "children": {
@@ -789,62 +845,6 @@
     }
   },
   {
-    "type": "schema_macro",
-    "named": true,
-    "fields": {
-      "head": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "schema_macro_keyword",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "name",
-            "named": true
-          }
-        ]
-      },
-      "pattern": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "raw_object",
-            "named": true
-          }
-        ]
-      },
-      "position": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "name",
-            "named": true
-          }
-        ]
-      },
-      "template": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "raw_object",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "scope_keyword",
     "named": true,
     "fields": {}
@@ -976,7 +976,7 @@
           "named": true
         },
         {
-          "type": "raw_core_schema",
+          "type": "raw_core_ethos",
           "named": true
         }
       ]
@@ -1374,6 +1374,10 @@
     "named": true
   },
   {
+    "type": "ethos_macro_keyword",
+    "named": true
+  },
+  {
     "type": "event",
     "named": false
   },
@@ -1415,10 +1419,6 @@
   },
   {
     "type": "relation_keyword",
-    "named": true
-  },
-  {
-    "type": "schema_macro_keyword",
     "named": true
   },
   {
